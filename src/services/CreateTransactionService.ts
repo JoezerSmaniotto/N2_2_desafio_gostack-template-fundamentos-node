@@ -16,6 +16,7 @@ class CreateTransactionService {
 
   public execute({ title, value, type }: RequestDTO): Transaction {
     if (!['income', 'outcome'].includes(type)) {
+      // O METODO INCLUDES VERIFICA SE O TYPE POSSUI ALGUM DOS VALORES DO ARRAY, SE SIM RETORNA TRUE SE NÃO FALSE
       throw Error('Transaction type is invalid');
     }
 
